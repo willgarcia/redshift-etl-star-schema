@@ -95,7 +95,7 @@ To interact with Redshift and S3, you will need to create a configuration file `
 - AWS role that allows to read S3 buckets from Redshift
 - S3 locations used for the datasets:
 
-Rename `dwh.cfg-dist` into `dwh.cfg` needs to be in the root folder and structured as follows:
+Rename `dwh.cfg-dist` into `dwh.cfg` in the root folder and provide the following configurations:
 
 ```ini
 [CLUSTER]
