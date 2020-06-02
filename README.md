@@ -177,7 +177,7 @@ log_data/2018/11/2018-11-12-events.json
 log_data/2018/11/2018-11-13-events.json
 ```
 
-A single log file as the following form:
+A single log file has the following form:
 
 ```json
 {
