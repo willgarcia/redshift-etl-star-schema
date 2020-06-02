@@ -149,7 +149,7 @@ song_data/A/B/C/TRABCEI128F424C983.json
 song_data/A/A/B/TRAABJL12903CDCF1A.json
 ```
 
-A single song file as the following form:
+A single song file has the following form:
 
 ```json
 {
