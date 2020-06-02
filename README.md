@@ -7,7 +7,7 @@ This project exercises the use of:
 
 ## Pre-requisites
 
-To satisfy pre-requisites, we recommend that you use Infrastructure as Code to manage these resources. Tools like [AWS Cloudformation](https://aws.amazon.com/cloudformation/), [Terraform](https://www.terraform.io/) or [Pulumi](https://www.pulumi.com/) will make the provisioning/decomissioning of the Redshift cluster, s3 user and IAM user/roles easier to reproduce in the future.
+To satisfy the pre-requisites, we recommend that you use Infrastructure as Code to manage these resources. Tools like [AWS Cloudformation](https://aws.amazon.com/cloudformation/), [Terraform](https://www.terraform.io/) or [Pulumi](https://www.pulumi.com/) will make the provisioning/decomissioning of the Redshift cluster, s3 user and IAM user/roles easier to reproduce in the future.
 
 1. AWS CLI
 
