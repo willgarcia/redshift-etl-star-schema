@@ -21,7 +21,7 @@ This role will delegate S3 access to Redshift.
 
 Take note of the ARN (arn:aws:iam::[AWS ACCOUNT ID]:role/[ROLE NAME]) as you will need it when creating the cluster.
 
-Note: this permission must be further restricted in terms of target resources but you can temporarily use that as a baseline if you accept not spending time on building fine-grained IAM policies and are comfortable with this temporary setup/cluster.
+Note: this permission must be further restricted in terms of targeted resources but you can temporarily use that as a baseline if you accept not spending time on building fine-grained IAM policies and are comfortable with this temporary setup/cluster.
 
 3. AWS IAM User
 
