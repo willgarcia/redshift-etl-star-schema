@@ -243,7 +243,15 @@ Notes (resources):
 - [Load from JSON data using a JSONPaths file in Redshift](
 https://docs.aws.amazon.com/redshift/latest/dg/r_COPY_command_examples.html#copy-from-json-examples-using-jsonpaths)
 
-## Data model specificities
+## Data model 
+
+### 3NF and star schema
+
+This a represenation of the final schema. Usually these tables live in different schemas but for simplicity, staging and fact/dimensions table are all in the same schema ("public" default Redshift/postgres schema).
+
+![Schema](https://udacity-redshiftsongs.s3-ap-southeast-2.amazonaws.com/schema.png "Songs schema")
+
+### Redshit specificities
 
 You can learn more about Redshift specificities here:
 
