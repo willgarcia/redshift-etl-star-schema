@@ -71,7 +71,7 @@ CREATE TABLE factsongplay (
 
 user_table_create = ("""
 CREATE TABLE dimuser (
-    user_id VARCHAR(100),
+    user_id VARCHAR(100) PRIMARY KEY,
     first_name VARCHAR(100),
     last_name VARCHAR(100),
     gender VARCHAR(1),
@@ -81,7 +81,7 @@ CREATE TABLE dimuser (
 
 song_table_create = ("""
 CREATE TABLE dimsong (
-    song_id VARCHAR(100),
+    song_id VARCHAR(100) PRIMARY KEY,
     title  VARCHAR(255),
     artist_id VARCHAR(100) NOT NULL,
     year SMALLINT,
@@ -91,7 +91,7 @@ CREATE TABLE dimsong (
 
 artist_table_create = ("""
 CREATE TABLE dimartist (
-    artist_id VARCHAR(100),
+    artist_id VARCHAR(100) PRIMARY KEY,
     name VARCHAR(100),
     location VARCHAR(200),
     latitude DECIMAL(9,6),
@@ -101,7 +101,7 @@ CREATE TABLE dimartist (
 
 time_table_create = ("""
 CREATE TABLE dimtime (
-    start_time TIMESTAMP,
+    start_time TIMESTAMP PRIMARY KEY,
     hour SMALLINT,
     day SMALLINT,
     week SMALLINT,
@@ -170,7 +170,7 @@ WHERE
 
 song_table_insert = ("""
 INSERT INTO dimsong (song_id, title, artist_id, year, duration)
-SELECT
+SELECT DISTINCT
     song_id,
     title,
     artist_id,
@@ -196,7 +196,7 @@ WHERE
 
 time_table_insert = ("""
 INSERT INTO dimtime (start_time, hour, day, week, month, year, weekday)
-SELECT
+SELECT DISTINCT
     start_time,
     EXTRACT(hour FROM start_time) as hour,
     EXTRACT(day FROM start_time) as day,
