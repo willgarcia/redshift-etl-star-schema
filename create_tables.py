@@ -2,26 +2,26 @@ import configparser
 import psycopg2
 from sql_queries import create_table_queries, drop_table_queries
 
-""" 
-Drop staging, fact and dimension tables in Redshift if they exists
-"""
 def drop_tables(cur, conn):
+    """ 
+    Drop staging, fact and dimension tables in Redshift if they exists
+    """
     for query in drop_table_queries:
         cur.execute(query)
         conn.commit()
 
-""" 
-Create staging, fact and dimension tables in Redshift
-"""
 def create_tables(cur, conn):
+    """ 
+    Create staging, fact and dimension tables in Redshift
+    """
     for query in create_table_queries:
         cur.execute(query)
         conn.commit()
 
-""" 
-Drop and create all Redshift tables
-"""
 def main():
+    """ 
+    Drop and create all Redshift tables
+    """
     config = configparser.ConfigParser()
     config.read('dwh.cfg')
 
