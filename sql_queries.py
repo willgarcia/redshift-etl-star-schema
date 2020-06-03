@@ -58,12 +58,12 @@ CREATE TABLE staging_songs (
 songplay_table_create = ("""
 CREATE TABLE factsongplay (
     songplay_id INT IDENTITY(0,1),
-    start_time TIMESTAMP,
-    user_id VARCHAR(100),
+    start_time TIMESTAMP NOT NULL,
+    user_id VARCHAR(100) NOT NULL,
     level VARCHAR(10),
-    song_id VARCHAR(100),
-    artist_id VARCHAR(100),
-    session_id VARCHAR(100),
+    song_id VARCHAR(100) NOT NULL,
+    artist_id VARCHAR(100) NOT NULL,
+    session_id VARCHAR(100) NOT NULL,
     location VARCHAR(200),
     user_agent  VARCHAR(200)
 )
@@ -83,7 +83,7 @@ song_table_create = ("""
 CREATE TABLE dimsong (
     song_id VARCHAR(100),
     title  VARCHAR(255),
-    artist_id VARCHAR(100),
+    artist_id VARCHAR(100) NOT NULL,
     year SMALLINT,
     duration SMALLINT 
 )
