@@ -7,7 +7,7 @@ This project exercises the use of:
 
 ## Pre-requisites
 
-For this pre-requisites, we recommend that you use Infrastructure as Code to manage these resources. Tools like [AWS Cloudformation](https://aws.amazon.com/cloudformation/), [Terraform](https://www.terraform.io/) or [Pulumi](https://www.pulumi.com/) will make the provisioning/decomissioning of the Redshift cluster, s3 user and IAM user/roles easier to reproduce in the future.
+To satisfy the pre-requisites, we recommend that you use Infrastructure as Code to manage all AWS resources. Tools like [AWS Cloudformation](https://aws.amazon.com/cloudformation/), [Terraform](https://www.terraform.io/) or [Pulumi](https://www.pulumi.com/) will make the provisioning/decomissioning of the Redshift cluster, s3 user and IAM user/roles easier to reproduce in the future.
 
 1. AWS CLI
 
@@ -21,7 +21,7 @@ This role will delegate S3 access to Redshift.
 
 Take note of the ARN (arn:aws:iam::[AWS ACCOUNT ID]:role/[ROLE NAME]) as you will need it when creating the cluster.
 
-Note: this permission must be further restricted in terms of target resources but you can temporarily use that as a baseline if you accept not spending time on building fine-grained IAM policies and are comfortable with this temporary setup/cluster.
+Note: this permission must be further restricted in terms of targeted resources but you can temporarily use that as a baseline if you accept not spending time on building fine-grained IAM policies and are comfortable with this temporary setup/cluster.
 
 3. AWS IAM User
 
@@ -95,7 +95,7 @@ To interact with Redshift and S3, you will need to create a configuration file `
 - AWS role that allows to read S3 buckets from Redshift
 - S3 locations used for the datasets:
 
-Rename `dwh.cfg-dist` into `dwh.cfg` needs to be in the root folder and structured as follows:
+Rename `dwh.cfg-dist` into `dwh.cfg` in the root folder and provide the following configurations:
 
 ```ini
 [CLUSTER]
@@ -149,7 +149,7 @@ song_data/A/B/C/TRABCEI128F424C983.json
 song_data/A/A/B/TRAABJL12903CDCF1A.json
 ```
 
-A single song file as the following form:
+A single song file has the following form:
 
 ```json
 {
@@ -177,7 +177,7 @@ log_data/2018/11/2018-11-12-events.json
 log_data/2018/11/2018-11-13-events.json
 ```
 
-A single log file as the following form:
+A single log file has the following form:
 
 ```json
 {
